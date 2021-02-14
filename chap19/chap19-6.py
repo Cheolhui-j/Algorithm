@@ -48,7 +48,7 @@ def countRanges(n, k):
 
     return ret
 
-print(countRanges(5000, 5265))
+print(countRanges(5000000, 3578452))
 
 
 
