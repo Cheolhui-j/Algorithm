@@ -14,10 +14,11 @@ def postorder(preorder, inorder):
     # 트리에 포함된 총 원소의 수.
     N = len(preorder)
     # 순회 순서가 비었으면 바로 종료.
-    if N == 1:
-        return preorder
+    if N == 0:
+        return []
     # 트리의 루트는 전위 순회의 순서가 루트부터 접근하므로 맨 앞의 원소를 통해 알 수 있음.
-    root_index = inorder.index(preorder[0])
+    root = preorder[0]
+    root_index = inorder.index(root)
     # 전위 순회 순서로부터 루트를 구했으니 중위 순화 순서에서 해당 원소를 찾아 
     # 왼쪽 서브트리와 오른쪽 서브트리로 나눈다.
     left_preorder = preorder[1:root_index+1]
@@ -28,7 +29,7 @@ def postorder(preorder, inorder):
     right_inorder = inorder[root_index:]
     right = postorder(right_preorder, right_inorder)
       
-    return left + right + preorder[root_index]
+    return left + right + root
 
 preorder = [27, 16, 9, 12, 54, 36, 72]
 inorder = [9, 12, 16, 27, 36, 54, 72]
