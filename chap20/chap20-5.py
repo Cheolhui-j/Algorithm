@@ -20,18 +20,20 @@ radius = [5,10,15]
 # 함수명은 getTree.
 # 입력으로 성벽들의 번호가 인가됨. 
 # 출력은 성벽들의 포함관계를 나타낸 트리. 
-class TreeNode(object):
+
+class TreeNode():
     def __init__(self):
-        self.node = []
+        self.children = dict()
 
-    def add_node(self, val):
-        self.node.append(val)
-
-def getTree(root):
+def getTree():
     tree = TreeNode()
-    for i in range(n):
-        if isChild(root, ch):
-            TreeNode.add_node(getTree(ch))
+    for root in range(n):
+        child_list = []
+        for i in range(n):
+            if isChild(root, i):
+                child_list.append(i)
+        renew = {root : child_list}
+        tree.children.update(renew)
     return tree
 
 def enclose(a, b):
@@ -46,3 +48,4 @@ def isChild(parent, child):
     return True
 
 tree = getTree()
+print(tree.children)
