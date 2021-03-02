@@ -26,10 +26,10 @@ def postorder(preorder, inorder):
     left = postorder(left_preorder, left_inorder)
 
     right_preorder = preorder[root_index+1:]
-    right_inorder = inorder[root_index:]
+    right_inorder = inorder[root_index+1:]
     right = postorder(right_preorder, right_inorder)
       
-    return left + right + root
+    return left + right + [root]
 
 preorder = [27, 16, 9, 12, 54, 36, 72]
 inorder = [9, 12, 16, 27, 36, 54, 72]
