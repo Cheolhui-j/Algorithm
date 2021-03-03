@@ -15,7 +15,7 @@ and the problem was written based on the problem of the Baekjoon online site.
 + chap8
 + [x] chap18
 + [x] chap19
-+ chap20
++ [x] chap20
 + chap21
 + chap22
 + chap23
